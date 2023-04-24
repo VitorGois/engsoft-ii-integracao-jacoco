@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Candidato.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">integracao</a> &gt; <a href="index.source.html" class="el_package">integracao</a> &gt; <span class="el_source">Candidato.java</span></div><h1>Candidato.java</h1><pre class="source lang-java linenums">package integracao;
+
+<span class="fc" id="L3">public class Candidato {</span>
+	
+	private int idade;
+	private Boolean contratado;
+	private FuncionarioCargaHoraria cargaHoraria;
+
+	public int getIdade() {
+<span class="fc" id="L10">		return idade;</span>
+	}
+
+	public void setIdade(int idade) {
+<span class="fc" id="L14">		this.idade = idade;</span>
+<span class="fc" id="L15">	}</span>
+	
+	public Boolean isContratado() {
+<span class="fc" id="L18">		return this.contratado;</span>
+	}
+
+	public FuncionarioCargaHoraria getCargaHoraria() {
+<span class="fc" id="L22">		return this.cargaHoraria;</span>
+	}
+
+	public Boolean contratar() {
+<span class="fc" id="L26">		int idade = this.idade;</span>
+		
+<span class="fc bfc" id="L28" title="All 4 branches covered.">		if (idade &lt; 16 || idade &gt; 55) { // 1</span>
+<span class="fc" id="L29">			this.contratado = false;</span>
+<span class="fc" id="L30">			return false; // 2</span>
+		}
+		
+<span class="fc" id="L33">		this.contratado = true;</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">		this.cargaHoraria = idade &gt;= 18 ? FuncionarioCargaHoraria.INTEGRAL : FuncionarioCargaHoraria.PARCIAL; // 3 - 4</span>
+		
+<span class="fc" id="L36">		return true; // 5</span>
+	} // 6
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
